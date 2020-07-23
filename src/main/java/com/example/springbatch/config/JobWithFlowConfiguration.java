@@ -7,17 +7,23 @@ import org.springframework.batch.core.configuration.annotation.StepBuilderFactor
 import org.springframework.batch.core.job.flow.Flow;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class JobWithFlowConfiguration {
 
+    /*
     @Autowired
     private StepBuilderFactory stepBuilderFactory;
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
+
+    @Autowired
+    @Qualifier("flow1")
+    private Flow flow1;
 
     @Bean
     public Step step1FlowJob() {
@@ -29,13 +35,13 @@ public class JobWithFlowConfiguration {
     }
 
     @Bean
-    public Job job(Flow flow) {
+    public Job job() {
 
-        return jobBuilderFactory.get("jobWithFlow")
-                .start(flow)
+        return jobBuilderFactory.get("flow1")
+                .start(flow1)
                 .next(step1FlowJob())
                 .end()
                 .build();
     }
-
+*/
 }

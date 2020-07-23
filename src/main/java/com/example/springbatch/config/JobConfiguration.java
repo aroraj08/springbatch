@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
-@EnableBatchProcessing
+//@Configuration
+//@EnableBatchProcessing
 public class JobConfiguration {
 
     @Autowired
@@ -47,7 +47,7 @@ public class JobConfiguration {
                 }).build();
     }
 
-    //@Bean
+    @Bean
     public Job helloWorldJob() {
         return jobBuilderFactory.get("job1")
                 .start(step1())
@@ -56,7 +56,7 @@ public class JobConfiguration {
                 .build();
     }
 
-    //@Bean
+    @Bean
     public Job anotherJob() {
 
         return jobBuilderFactory.get("job2")
