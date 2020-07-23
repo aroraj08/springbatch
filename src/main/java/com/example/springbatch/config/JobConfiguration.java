@@ -56,7 +56,7 @@ public class JobConfiguration {
                 .build();
     }
 
-    @Bean
+    //@Bean
     public Job anotherJob() {
 
         return jobBuilderFactory.get("job2")
